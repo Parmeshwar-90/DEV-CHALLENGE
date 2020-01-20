@@ -1,0 +1,49 @@
+<html>
+<head>
+    <!--
+    This is the library that provides websocket streaming pub/sub
+    The dev serverver is serving the html and javascript, but it also provides updating fx data on /fx/prices.
+     -->
+    <script src="stomp.js"></script>
+    <script src="sparkline.js"></script>
+</head>
+<body>
+
+<!-- This is a description of what you should do for this task.  You can remove it for your answer -->
+<section class="content">
+    <h1>Updating Bid Data Table</h1>
+    
+        <table id="currency-data-table">
+            <tr>
+                <th>Name</th>
+                <th>Current Best Bid Price</th>
+                <th>Current Best Ask Price</th>
+                <th>Amount Bid Last Changed</th>
+                <th>Amount Ask Last Changed</th>
+                <th>Sparklines</th>
+            </tr>
+        </table>
+
+        <div id="stomp-status">
+            It hasn't yet connected to the stomp server.  If this state persists for a significant length of time, check
+            <ul>
+                <li>that you are running a browser that supports javascript and WebSockets</li>
+                <li>that you have run the development server by going into the db-updating-table directory and
+                    run it by running <code>npm start</code></li>
+                <li>that there were no errors during the development server starting (e.g. perhaps port
+                    8011 was taken)</li>
+                <li>that you are accessing it through that dev server, at <a href="http://localhost:8011">http://localhost:8011</a>
+                    and that no errors are appearing in your browsers console.</li>
+            </ul>
+            If none of that works, then ask for help by emailing <a href="mailto:adam.iley@db.com">adam.iley@db.com</a>.
+        </div>
+
+</section>
+
+<!-- Code you write in index.js and anything it depends on will be bundled into bundle.js and
+     is included here -->
+<script src="bundle.js"></script>
+<script src="./update-bid-data.js"></script>
+
+</body>
+</html>
